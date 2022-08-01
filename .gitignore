@@ -1,6 +1,5 @@
 # Exclude Images
-src/img/
-src/img_low/
+src/img_big/
 
 # Exclude Log Files
 *log
