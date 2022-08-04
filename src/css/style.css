@@ -1,14 +1,32 @@
 @import url("Roboto-Regular.ttf");
 :root {
-  --font-color: #959BA0;
   --bg-color: #1F272D;
   --linkbg-color: #fff;
+  --font-color: #959BA0;
+  --hover-color: #f0f0f0;
 }
 
 [data-theme=light] {
-  --font-color: #959798;
   --bg-color: #E6E8EA;
   --linkbg-color: #fff;
+  --font-color: #959798;
+  --hover-color: #666;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-clip: content-box;
+  background: var(--font-color);
+  border: 6px solid transparent;
 }
 
 * {
@@ -18,19 +36,19 @@
 
 html,
 body {
+  margin: 0;
   height: 100%;
   font-size: 16px;
   overflow-y: auto;
   box-sizing: border-box;
-  margin: 0;
 }
 
 body {
   gap: 1rem;
-  position: relative;
   display: flex;
   padding: 1rem;
   flex-wrap: wrap;
+  position: relative;
   box-sizing: border-box;
   color: var(--font-color);
   align-content: flex-start;
@@ -42,13 +60,12 @@ body {
 
 .header {
   width: 100%;
+  display: grid;
   margin-top: 1rem;
   font-size: 2.5rem;
   padding-left: 1rem;
-  display: grid;
   grid-auto-flow: column;
 }
-
 .header:first-child {
   margin-top: 0px;
 }
@@ -58,13 +75,13 @@ body {
   overflow: hidden;
   aspect-ratio: 1/1;
   border-radius: 1rem;
+  transition-duration: 250ms;
+  background-position: center;
+  background-repeat: no-repeat;
   background-color: var(--linkbg-color);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
 }
-
 .link:hover {
   cursor: pointer;
   outline: 1px solid #fff;
@@ -82,12 +99,13 @@ body {
 .controls .fullscreen {
   padding: 0.6rem 0.4rem;
   border-radius: 0.3rem;
+  transition-duration: 250ms;
   border: 1px solid var(--font-color);
 }
 .controls .fullscreen:hover {
-  color: #fff;
   cursor: pointer;
-  border: 1px solid #fff;
+  color: var(--hover-color);
+  border: 1px solid var(--hover-color);
 }
 
 .switch .theme-switch {
@@ -111,7 +129,7 @@ body {
   border: 1px solid var(--font-color);
 }
 .switch .slider:hover {
-  border: 1px solid #fff;
+  border: 1px solid var(--hover-color);
 }
 .switch .slider:before {
   left: 4px;
@@ -138,10 +156,11 @@ body {
 
 .sign {
   width: 100%;
+  margin-top: 2rem;
   text-align: center;
+  transition-duration: 250ms;
 }
-
 .sign:hover {
-  color: #fff;
   cursor: pointer;
+  color: var(--hover-color);
 }/*# sourceMappingURL=style.css.map */

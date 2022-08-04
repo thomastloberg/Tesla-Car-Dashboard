@@ -1,19 +1,32 @@
 @import url('Roboto-Regular.ttf');
 
 :root {
-
-    --font-color: #959BA0;
     --bg-color: #1F272D;
     --linkbg-color: #fff;
+    --font-color: #959BA0;
+    --hover-color: #f0f0f0;
 }
 
 [data-theme="light"] {
-
-    --font-color: #959798;
     --bg-color: #E6E8EA;
     --linkbg-color: #fff;
+    --font-color: #959798;
+    --hover-color: #666;
 }
 
+::-webkit-scrollbar {
+    width: 20px;
+    cursor: pointer;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-clip: content-box;
+    background: var(--font-color);
+    border: 6px solid transparent;
+}
 
 * {
 	padding: 0;
@@ -22,19 +35,19 @@
 
 html,
 body {
+    margin: 0;
 	height: 100%;
     font-size: 16px;
 	overflow-y: auto;
 	box-sizing: border-box;
-    margin: 0;
 }
 
 body {
     gap: 1rem;
-    position: relative;
 	display: flex;
     padding: 1rem;
     flex-wrap: wrap;
+    position: relative;
 	box-sizing: border-box;
     color: var(--font-color);
 	align-content: flex-start;
@@ -46,15 +59,15 @@ body {
 
 .header {
     width: 100%;
+    display: grid;
     margin-top: 1rem;
     font-size: 2.5rem;
     padding-left: 1rem;
-    display: grid;
     grid-auto-flow: column;
-}
 
-.header:first-child {
-    margin-top: 0px;
+    &:first-child {
+        margin-top: 0px;
+    }
 }
 
 .link {
@@ -62,18 +75,20 @@ body {
     overflow: hidden;
     aspect-ratio: 1 / 1;
     border-radius: 1rem;
+    transition-duration: 250ms;
+    background-position: center;
+    background-repeat: no-repeat;
     background-color: var(--linkbg-color);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 	-webkit-background-size: contain;
-	-moz-background-size: contain;
-	-o-background-size: contain;
-	background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.link:hover {
-    cursor: pointer;
-    outline: 1px solid #fff;
+	   -moz-background-size: contain;
+	     -o-background-size: contain;
+	        background-size: contain;
+
+    &:hover {
+        cursor: pointer;
+        outline: 1px solid #fff;
+    }
 }
 
 .controls {
@@ -87,13 +102,14 @@ body {
     .fullscreen {
         padding: .6rem .4rem;
         border-radius: .3rem;
+        transition-duration: 250ms;
         border: 1px solid var(--font-color);
-    }
-    
-    .fullscreen:hover {
-        color: #fff;
-        cursor: pointer;
-        border: 1px solid #fff;
+
+        &:hover {
+            cursor: pointer;
+            color: var(--hover-color);
+            border: 1px solid var(--hover-color);
+        }
     }
 }
 
@@ -119,21 +135,21 @@ body {
         position: absolute;
         background-color: #ccc;
         border: 1px solid var(--font-color);
-    }
-    
-    .slider:hover {
-        border: 1px solid #fff;
-    }
-    
-    .slider:before {
-        left: 4px;
-        width: 26px;
-        bottom: 4px;
-        content: "";
-        height: 26px;
-        transition: .4s;
-        position: absolute;
-        background-color: #fff;
+
+        &:hover {
+            border: 1px solid var(--hover-color);
+        }
+
+        &:before {
+            left: 4px;
+            width: 26px;
+            bottom: 4px;
+            content: "";
+            height: 26px;
+            transition: .4s;
+            position: absolute;
+            background-color: #fff;
+        }
     }
     
     input:checked + .slider {
@@ -146,18 +162,21 @@ body {
     
     .slider.round {
         border-radius: 34px;
-    }
-    
-    .slider.round:before {
-        border-radius: 50%;
+
+        &:before {
+            border-radius: 50%;
+        }
     }
 }
 
 .sign {
     width: 100%;
+    margin-top: 2rem;
     text-align: center;
-}
-.sign:hover {
-    color: #fff;
-    cursor: pointer;
+    transition-duration: 250ms;
+
+    &:hover {
+        cursor: pointer;
+        color: var(--hover-color);
+    }
 }
