@@ -15,14 +15,14 @@
 }
 
 ::-webkit-scrollbar {
-    width: 20px;
+    width: .6rem;
     cursor: pointer;
 }
 ::-webkit-scrollbar-track {
     background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-    border-radius: 20px;
+    border-radius: .6rem;
     background-clip: content-box;
     background: var(--font-color);
     border: 6px solid transparent;
